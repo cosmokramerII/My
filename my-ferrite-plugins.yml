@@ -1,0 +1,29 @@
+name: My Custom Ferrite List - Lesbian Focus
+author: Intelligence  # or your name/handle
+description: Custom plugin list starting with PornRips.to Lesbian-only source
+sources:
+  - name: PornRips.to Lesbian
+    version: 1
+    minVersion: '0.6.4'
+    about: >-
+      Lesbian genre only (HEVC x265 porn rips). Searches are forced to lesbian + your query.
+      Detail pages usually contain download links (torrent or direct). Great for debrid streaming when magnets are present.
+    website: https://pornrips.to
+    tags:
+      - name: Adult
+        color: ff3b30
+      - name: Lesbian
+      - name: Porn
+    htmlParser:
+      searchUrl: /?s=lesbian+{query}
+      rows: article
+      title:
+        query: h2 a
+      size:
+        query: strong
+        regex: 'File Size:\s*([\d.]+ ?[A-Za-z]+)'
+      externalLinkQuery: h2 a
+      magnet:
+        externalLinkQuery: h2 a
+        query: a[href^="magnet:"]
+        attribute: href
