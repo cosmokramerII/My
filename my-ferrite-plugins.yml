@@ -8,14 +8,13 @@ sources:
     about: >-
       Lesbian genre only (HEVC x265 porn rips). Searches are forced to lesbian + your query.
       Detail pages usually contain download links (torrent or direct). Great for debrid streaming when magnets are present.
-    website: https://pornrips.to
+    website: https://pornrips.to/?s=lesbian+{query}
     tags:
       - name: Adult
         color: ff3b30
       - name: Lesbian
       - name: Porn
     htmlParser:
-      searchUrl: /?s=lesbian+{query}
       rows: article
       title:
         query: h2 a
