@@ -1,0 +1,46 @@
+plugins:
+  - name: Adult Torrent Sources
+    description: Ready-to-use adult torrents (PornLeech + ThePornBay + XXX)
+    type: source
+    version: 1.0
+
+    search:
+      url: "https://pornleech.com/search/{query}"
+      request:
+        headers:
+          User-Agent: "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15"
+      results:
+        selector: ".torrent-row"
+        title: "h3 a"
+        link: "h3 a@href"
+        magnet: ".magnet@href"
+        size: ".size"
+        seeds: ".seeders strong"
+        leeches: ".leechers strong"
+
+  - name: ThePornBay
+    type: source
+    search:
+      url: "https://thepornbay.org/search/{query}/?sort=seeders"
+      results:
+        selector: ".torrent"
+        title: ".torrent-name a"
+        link: ".torrent-name a@href"
+        magnet: ".magnet-link@href"
+        size: ".size"
+        seeds: ".seeds"
+
+  - name: XXXTorrent
+    type: source
+    search:
+      url: "https://xxxtorrent.to/search/{query}"
+      results:
+        selector: "tr.torrent"
+        title: ".title a"
+        link: ".title a@href"
+        magnet: "a[href^='magnet']@href"
+        size: ".size"
+        seeds: ".seeds"
+
+    stream:
+      debrid_priority: high
